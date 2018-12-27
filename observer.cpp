@@ -8,11 +8,11 @@ using namespace std;
 
 class Publisher {
 	vector < class AObserver * > subscribers; 
-	string name;
 public:
+	string name;
 	Publisher(string name) {
 		this->name = name;
-		cout << "I am a Publisher and my new name is " << name << '\n';
+		cout << "I am a Publisher and my name is " << name << '\n';
 	}
 	void attach(AObserver *sub) {
 		subscribers.push_back(sub);
@@ -25,10 +25,11 @@ public:
 	string name;
 	AObserver(string name) {
 		this->name = name;
-		cout << "I am a Subscriber and my new name is " << name << '\n';
+		cout << "I am a Subscriber and my name is " << name << '\n';
 	}
 	void follow(Publisher *pub) {
 		pub->attach(this);
+		cout << name << " is following " << pub->name << '\n';
 	}
 	virtual void hears(string speech) = 0;
 };
@@ -53,9 +54,13 @@ int main() {
 	cout << '\n';
 
 	sub1.follow(&speaker);
+	cout << '\n';
+
 	speaker.says("Hi");
 	cout << '\n';
 
 	sub2.follow(&speaker);
+	cout << '\n';
+
 	speaker.says("Hey");
 }
