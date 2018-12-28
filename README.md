@@ -18,3 +18,12 @@ Lecturer says: Hey
 He hears: Hey
 She hears: Hey
 ```
+
+## Output of `Composition.cpp`
+```
+I am an Animal Dog and my name is Rex
+I am a Robot Dog and my name is One
+
+Rex is poked and it replied: Whoof Poop
+One is poked and it replied: Whoof Beep
+```
